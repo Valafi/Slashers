@@ -1,3 +1,13 @@
+#### This is a fork of Slashers to fix and improve the code (with no changes to the content).
+
+A friend of mine made a fork of Slashers not long ago, and I have been providing patches for the gamemode there. He has begun to highly customize it, changing some of the original content out for other content. I decided that I should maintain another fork with only the code improvements and not the content changes. If you don't care for the original content and want a customized version, his fork is ![parkersmod/Slashers](http://github.com/parkersmod/Slashers).
+
+**Changes for This Fork:**
+* \-
+
+#### The original README is below-
+
+
 ![Slashers](http://utopia-games.net/medias/slashers/logo.png)
 
 
