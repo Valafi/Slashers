@@ -61,7 +61,7 @@ function notificationPanel(notifText,notificationType)
 	Text:SetTextColor( Color( 255, 255, 255 ) )
 	Text:SetPos( 95, -30 )
 	Text:SetContentAlignment(5)
-	Text:SetFont( "Bohemian typewriter" )
+	Text:SetFont( "SlashersTypewriter" )
 	Text:SetSize( 402,128 )
 
 	---
@@ -75,7 +75,7 @@ function notificationPanel(notifText,notificationType)
 
 	if notificationType == "cross" then
 		surface.PlaySound( "slashers/effects/invalid.wav" )
-	elseif (notificationType == "safe" or notificationType == "exit" or notificationType =="question")  then
+	elseif (notificationType == "safe" or notificationType == "exit" or notificationType == "question")  then
 		surface.PlaySound( "slashers/effects/notif_2.wav" )
 	end
 
