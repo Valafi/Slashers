@@ -2,8 +2,8 @@
 --
 -- @Author: Garrus2142
 -- @Date:   2017-07-25 16:15:50
--- @Last Modified by:   Garrus2142
--- @Last Modified time: 2017-07-26 14:48:52
+-- @Last Modified by:   Valafi
+-- @Last Modified time: 2021-03-19 01:03:28
 
 local GM = GM or GAMEMODE
 local mat_ColorMod = Material( "pp/colour" )
@@ -14,7 +14,7 @@ mat_ColorMod:SetTexture( "$fbtexture", render.GetScreenEffectTexture() )
 local tab = {}
 
 local function DrawColorModify( tab )
-	if LocalPlayer():GetObserverMode() ~= OBS_MODE_NONE then
+	if LocalPlayer():GetObserverMode() ~= OBS_MODE_NONE then -- Spectate vision (but not for round start/end)
 		tab[ "$pp_colour_addr" ] 		= 0
 		tab[ "$pp_colour_addg" ] 		= 0
 		tab[ "$pp_colour_addb" ] 		= 0
@@ -24,7 +24,7 @@ local function DrawColorModify( tab )
 		tab[ "$pp_colour_mulr" ] 		= 0
 		tab[ "$pp_colour_mulg" ] 		= 0
 		tab[ "$pp_colour_mulb" ] 		= 0
-	elseif LocalPlayer():Team() == TEAM_KILLER and GM.ROUND.Active then
+	elseif LocalPlayer():Team() == TEAM_KILLER and GM.ROUND.Active then -- Killer vision
 		tab["$pp_colour_addr"] = 47/255
 	    tab["$pp_colour_addg"] = 25/255
 	    tab["$pp_colour_addb"] = 8/255
@@ -34,7 +34,7 @@ local function DrawColorModify( tab )
 	    tab["$pp_colour_mulr"] = -38.25/255
 	    tab["$pp_colour_mulg"] = -38.25/255
 	    tab["$pp_colour_mulb"] = -38.25/255
-	elseif GM.ROUND.Survivors and GM.ROUND.Active and LocalPlayer().ClassID == CLASS_SURV_JUNKY then
+	elseif GM.ROUND.Survivors and GM.ROUND.Active and LocalPlayer().ClassID == CLASS_SURV_JUNKY then -- Weed vision
 		tab[ "$pp_colour_addr" ] 		= 0
 		tab[ "$pp_colour_addg" ] 		= 0
 		tab[ "$pp_colour_addb" ] 		= 0
@@ -44,7 +44,7 @@ local function DrawColorModify( tab )
 		tab[ "$pp_colour_mulr" ] 		= 10
 		tab[ "$pp_colour_mulg" ] 		= 60
 		tab[ "$pp_colour_mulb" ] 		= 1	
-	else
+	else -- Survivor vision (also for round start/end)
 		tab[ "$pp_colour_addr" ] 		= 0.02
 		tab[ "$pp_colour_addg" ] 		= 0.02
 		tab[ "$pp_colour_addb" ] 		= 0.02
