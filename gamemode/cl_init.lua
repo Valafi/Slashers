@@ -13,8 +13,8 @@ include("modulesloader.lua")
 local hide = {
 	CHudHealth = true,
 	CHudBattery = true,
-	CHudAmmo = true,
-	//CHudWeaponSelection = true,
+	CHudAmmo = true
+	--CHudWeaponSelection = true,
 }
 
 hook.Add( "HUDShouldDraw", "HideHUD", function( name )

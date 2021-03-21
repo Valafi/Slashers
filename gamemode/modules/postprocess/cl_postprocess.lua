@@ -14,7 +14,7 @@ mat_ColorMod:SetTexture( "$fbtexture", render.GetScreenEffectTexture() )
 local tab = {}
 
 local function DrawColorModify( tab )
-	if LocalPlayer():GetObserverMode() != OBS_MODE_NONE then
+	if LocalPlayer():GetObserverMode() ~= OBS_MODE_NONE then
 		tab[ "$pp_colour_addr" ] 		= 0
 		tab[ "$pp_colour_addg" ] 		= 0
 		tab[ "$pp_colour_addb" ] 		= 0
@@ -24,7 +24,7 @@ local function DrawColorModify( tab )
 		tab[ "$pp_colour_mulr" ] 		= 0
 		tab[ "$pp_colour_mulg" ] 		= 0
 		tab[ "$pp_colour_mulb" ] 		= 0
-	elseif LocalPlayer():Team() == TEAM_KILLER && GM.ROUND.Active then
+	elseif LocalPlayer():Team() == TEAM_KILLER and GM.ROUND.Active then
 		tab["$pp_colour_addr"] = 47/255
 	    tab["$pp_colour_addg"] = 25/255
 	    tab["$pp_colour_addb"] = 8/255
@@ -34,7 +34,7 @@ local function DrawColorModify( tab )
 	    tab["$pp_colour_mulr"] = -38.25/255
 	    tab["$pp_colour_mulg"] = -38.25/255
 	    tab["$pp_colour_mulb"] = -38.25/255
-	elseif GM.ROUND.Survivors && GM.ROUND.Active && LocalPlayer().ClassID == CLASS_SURV_JUNKY then
+	elseif GM.ROUND.Survivors and GM.ROUND.Active and LocalPlayer().ClassID == CLASS_SURV_JUNKY then
 		tab[ "$pp_colour_addr" ] 		= 0
 		tab[ "$pp_colour_addg" ] 		= 0
 		tab[ "$pp_colour_addb" ] 		= 0
@@ -69,7 +69,7 @@ local function DrawColorModify( tab )
 end
 
 hook.Add( "Think", "Killer_Light", function()
-	if LocalPlayer():Team() ~= TEAM_KILLER or !GM.ROUND.Active then return end
+	if LocalPlayer():Team() ~= TEAM_KILLER or not GM.ROUND.Active then return end
 	local dlight = DynamicLight( LocalPlayer():EntIndex() )
 	clr = Color(90,20,0,255)
 	if ( dlight ) then
