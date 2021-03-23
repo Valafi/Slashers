@@ -8,6 +8,7 @@ A friend of mine made a fork of Slashers not long ago, and I have been providing
 * Updated workshop downloads (shouldn't need the collection anymore)
 * Added a few comments for clarity
 * Restructured repository (for easy cloning to addons folder)
+* Removed player limit
 
 #### The original README is below-
 

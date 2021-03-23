@@ -2,8 +2,8 @@
 --
 -- @Author: Garrus2142
 -- @Date:   2017-07-25 16:15:46
--- @Last Modified by:   Garrus2142
--- @Last Modified time: 2017-07-26 14:45:24
+-- @Last modified by:   Valafi
+-- @Last modified time: 2021-03-23 04:37:27
 
 local GM = GM or GAMEMODE
 local playermeta = FindMetaTable("Player")
@@ -63,9 +63,13 @@ function playermeta:SetupKiller()
 end
 
 function GM.CLASS:SetupSurvivors()
-	local classes = table.GetKeys(GM.CLASS.Survivors)
+	local classes = {}
 
 	for _, v in ipairs(GM.ROUND.Survivors) do
+		if #classes < 1 then -- No choices left, need to repopulate list
+			classes = table.GetKeys(GM.CLASS.Survivors)
+		end
+
 		local class, key = table.Random(classes)
 		v:SetSurvClass(class)
 		table.remove(classes, key)

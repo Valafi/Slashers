@@ -2,8 +2,8 @@
 --
 -- @Author: Garrus2142
 -- @Date:   2017-07-25 16:15:48
--- @Last Modified by:   Daryl_Winters
--- @Last Modified time: 2017-08-10T15:08:45+02:00
+-- @Last modified by:   Valafi
+-- @Last modified time: 2021-03-23 04:37:27
 
 local GM = GM or GAMEMODE
 local MAPS_LIST
@@ -73,13 +73,10 @@ function GM.ROUND:Start(forceKiller)
 		GM.ROUND.Killer = GM.ROUND:ChooseKiller()
 	end
 
-	local i = 0
 	for _, v in ipairs(player.GetAll()) do
-		if i > 10 then break end
 		if GM.ROUND.Killer ~= v then
 			table.insert(GM.ROUND.Survivors, v)
 		end
-		i = i + 1
 	end
 	GM.ROUND:ViewInitCam(false)
 

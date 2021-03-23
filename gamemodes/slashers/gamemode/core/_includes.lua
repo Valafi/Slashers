@@ -2,8 +2,8 @@
 --
 -- @Author: Garrus2142
 -- @Date:   2017-07-25 16:15:45
--- @Last modified by:   Guilhem PECH
--- @Last modified time: 21-Oct-2018
+-- @Last modified by:   Valafi
+-- @Last modified time: 2021-03-23 04:37:27
 
 if SERVER then
 	-- Convars
@@ -42,9 +42,6 @@ if SERVER then
 	AddCSLuaFile("rounds/sh_rounds.lua")
 	AddCSLuaFile("rounds/cl_network.lua")
 	AddCSLuaFile("rounds/cl_rounds.lua")
-
-	-- Slot CheckPassword
-	include ("slot/sv_slotcheck.lua")
 else
 	-- Convars
 	include("convars.lua")
