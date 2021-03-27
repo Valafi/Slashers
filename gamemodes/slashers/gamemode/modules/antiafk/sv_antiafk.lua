@@ -3,7 +3,7 @@
 -- @Author: Garrus2142
 -- @Date:   2017-07-26 01:30:34
 -- @Last Modified by:   Valafi
--- @Last Modified time: 2021-03-23 06:46:48
+-- @Last Modified time: 2021-03-27 09:35:12
 
 local function PlayerSpawn(ply)
 	ply.lastpos = ply:GetPos()
@@ -24,7 +24,7 @@ local function Think()
 	for _, v in ipairs(player.GetAll()) do
 		if not v:Alive() or v:IsBot() then
 			v.afktime = curtime
-			continue
+			goto cont
 		end
 
 		-- Reset
@@ -45,6 +45,8 @@ local function Think()
 			-- Warning
 			v:SetNWInt("afk_warn", v.afktime + (CV_afktime:GetInt() + CV_afkmsgtime:GetInt()))
 		end
+
+		::cont::
 	end
 end
 hook.Add("Think", "antiafk_Think", Think)
