@@ -1,6 +1,14 @@
-#### This is a fork of Slashers to fix and improve the code (with no changes to the content).
+#### This is a fork of Slashers to fix and expand the gamemode.
 
-A friend of mine made a fork of Slashers not long ago, and I have been providing patches for the gamemode there. He has begun to highly customize it, changing some of the original content out for other content. I decided that I should maintain another fork with only the code improvements and not the content changes. If you don't care for the original content and want a customized version, his fork is ![parkersmod/Slashers](http://github.com/parkersmod/Slashers).
+My friend and I have been working on a new version of Slashers, with me focusing on the core gamemode code, and him focusing on expanding the gamemode with new content. This is my fork, where I am trying to fix bugs, optimize and clean up the code, and modularize the gamemode. I have been making frequent patches to his fork, where he has been balancing classes/weapons, and adding new killers. The patches I make there translate to cleaner patches over here.
+
+**Fork Goals:**
+* Fix bugs
+* Optimize everything
+* Clean up code
+* Modularize code
+
+I want to make this code modular enough that anybody can make expansion packs like my friend. We will publish the gamemode and expansions to the workshop after they have been fleshed out more. If you want to play the gamemode now, you can use this fork for a stable version of the original Slashers experience, or you can use my friend's fork for a customized, rebalanced Slashers experience: ![parkersmod/Slashers](http://github.com/parkersmod/Slashers). Note that if you use his fork, you will need to subscribe to his content pack as well: ![Slashers Rework Content](https://steamcommunity.com/sharedfiles/filedetails/?id=2426205651).
 
 **Changes for This Fork:**
 * Replaced C-style syntax with LUA syntax
@@ -9,6 +17,7 @@ A friend of mine made a fork of Slashers not long ago, and I have been providing
 * Added a few comments for clarity
 * Restructured repository (for easy cloning to addons folder)
 * Removed player limit
+* Huge performance improvements
 
 #### The original README is below-
 
